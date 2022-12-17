@@ -2,7 +2,6 @@ package service
 
 import (
 	"deps_per_service/internal/core"
-	"deps_per_service/internal/handler"
 )
 
 type BillRepo interface {
@@ -12,32 +11,32 @@ type BillRepo interface {
 	DeleteBill(billID int) error
 }
 
-type billService struct {
+type BillService struct {
 	billRepo BillRepo
 }
 
-func (b *billService) GetBill(billID int) (*core.Bill, error) {
-	//TODO implement me
-	panic("implement me")
-}
-
-func (b *billService) CreateBill(bill *core.Bill) error {
-	//TODO implement me
-	panic("implement me")
-}
-
-func (b *billService) UpdateBill(bill *core.Bill) error {
-	//TODO implement me
-	panic("implement me")
-}
-
-func (b *billService) DeleteBill(billID int) error {
-	//TODO implement me
-	panic("implement me")
-}
-
-func NewBillService(billRepo BillRepo) handler.BillService {
-	return &billService{
+func NewBillService(billRepo BillRepo) *BillService {
+	return &BillService{
 		billRepo: billRepo,
 	}
+}
+
+func (b *BillService) GetBill(billID int) (*core.Bill, error) {
+	//TODO implement me
+	panic("implement me")
+}
+
+func (b *BillService) CreateBill(bill *core.Bill) error {
+	//TODO implement me
+	panic("implement me")
+}
+
+func (b *BillService) UpdateBill(bill *core.Bill) error {
+	//TODO implement me
+	panic("implement me")
+}
+
+func (b *BillService) DeleteBill(billID int) error {
+	//TODO implement me
+	panic("implement me")
 }

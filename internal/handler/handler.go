@@ -2,6 +2,10 @@ package handler
 
 import "deps_per_service/internal/service"
 
+type Services interface {
+	GetServices() *service.Services
+}
+
 type Handlers struct {
 	UserHandler    *UserHandler
 	OrderHandler   *OrderHandler
@@ -10,12 +14,12 @@ type Handlers struct {
 }
 
 func NewHandlers(
-	services *service.Services,
+	services Services,
 ) *Handlers {
 	return &Handlers{
-		UserHandler:    NewUserHandler(services.UserService),
-		OrderHandler:   NewOrderHandler(services.OrderService),
-		BillHandler:    NewBillHandler(services.BillService),
-		ProfileHandler: NewProfileHandler(services.ProfileService),
+		UserHandler:    NewUserHandler(services.GetServices().UserService),
+		OrderHandler:   NewOrderHandler(services.GetServices().OrderService),
+		BillHandler:    NewBillHandler(services.GetServices().BillService),
+		ProfileHandler: NewProfileHandler(services.GetServices().ProfileService),
 	}
 }

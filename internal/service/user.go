@@ -2,7 +2,6 @@ package service
 
 import (
 	"deps_per_service/internal/core"
-	"deps_per_service/internal/handler"
 )
 
 type UserRepo interface {
@@ -18,32 +17,32 @@ type UserRepo interface {
 	Delete(id int) error
 }
 
-type userService struct {
+type UserService struct {
 	userRepo UserRepo
 }
 
-func (u *userService) CreateUser(user *core.User) error {
+func (u *UserService) CreateUser(user *core.User) error {
 	//TODO implement me
 	panic("implement me")
 }
 
-func (u *userService) GetUser(userID int) (*core.User, error) {
+func (u *UserService) GetUser(userID int) (*core.User, error) {
 	//TODO implement me
 	panic("implement me")
 }
 
-func (u *userService) UpdateUser(userID int, user *core.User) error {
+func (u *UserService) UpdateUser(userID int, user *core.User) error {
 	//TODO implement me
 	panic("implement me")
 }
 
-func (u *userService) DeleteUser(userID int) error {
+func (u *UserService) DeleteUser(userID int) error {
 	//TODO implement me
 	panic("implement me")
 }
 
-func NewUserService(userRepo UserRepo) handler.UserService {
-	return &userService{
+func NewUserService(userRepo UserRepo) *UserService {
+	return &UserService{
 		userRepo: userRepo,
 	}
 }

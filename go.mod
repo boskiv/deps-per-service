@@ -4,6 +4,7 @@ go 1.19
 
 require (
 	github.com/gofiber/fiber/v2 v2.40.1
+	github.com/golang/mock v1.6.0
 	github.com/ilyakaznacheev/cleanenv v1.4.2
 	gorm.io/driver/postgres v1.4.5
 	gorm.io/gorm v1.24.2
