@@ -1,7 +1,6 @@
 package repository
 
 import (
-	"deps_per_service/internal/service"
 	"gorm.io/gorm"
 )
 
@@ -10,10 +9,10 @@ type BaseRepo struct {
 }
 
 type Repositories struct {
-	UserRepo    service.UserRepo
-	ProfileRepo service.ProfileRepo
-	OrderRepo   service.OrderRepo
-	BillRepo    service.BillRepo
+	UserRepo    *UserRepo
+	ProfileRepo *ProfileRepo
+	OrderRepo   *OrderRepo
+	BillRepo    *BillRepo
 }
 
 func NewRepositories(db *gorm.DB) *Repositories {

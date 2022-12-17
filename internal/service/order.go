@@ -2,7 +2,6 @@ package service
 
 import (
 	"deps_per_service/internal/core"
-	"deps_per_service/internal/handler"
 )
 
 type OrderRepo interface {
@@ -12,32 +11,32 @@ type OrderRepo interface {
 	DeleteOrder(orderID int) error
 }
 
-type orderService struct {
+type OrderService struct {
 	orderRepo OrderRepo
 }
 
-func (o *orderService) GetOrder(orderID int) (*core.Order, error) {
+func (o *OrderService) GetOrder(orderID int) (*core.Order, error) {
 	//TODO implement me
 	panic("implement me")
 }
 
-func (o *orderService) CreateOrder(order *core.Order) error {
+func (o *OrderService) CreateOrder(order *core.Order) error {
 	//TODO implement me
 	panic("implement me")
 }
 
-func (o *orderService) UpdateOrder(order *core.Order) error {
+func (o *OrderService) UpdateOrder(order *core.Order) error {
 	//TODO implement me
 	panic("implement me")
 }
 
-func (o *orderService) DeleteOrder(orderID int) error {
+func (o *OrderService) DeleteOrder(orderID int) error {
 	//TODO implement me
 	panic("implement me")
 }
 
-func NewOrderService(orderRepo OrderRepo) handler.OrderService {
-	return &orderService{
+func NewOrderService(orderRepo OrderRepo) *OrderService {
+	return &OrderService{
 		orderRepo: orderRepo,
 	}
 }

@@ -5,6 +5,7 @@ import (
 	"github.com/gofiber/fiber/v2"
 )
 
+//go:generate mockgen -source=user.go -destination=mocks/user.go -package=mocks
 type UserService interface {
 	// CreateUser creates a new user.
 	CreateUser(user *core.User) error

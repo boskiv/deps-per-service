@@ -1,15 +1,14 @@
 package service
 
 import (
-	"deps_per_service/internal/handler"
 	"deps_per_service/internal/repository"
 )
 
 type Services struct {
-	UserService    handler.UserService
-	OrderService   handler.OrderService
-	BillService    handler.BillService
-	ProfileService handler.ProfileService
+	UserService    *UserService
+	OrderService   *OrderService
+	BillService    *BillService
+	ProfileService *ProfileService
 }
 
 func NewServices(
@@ -21,5 +20,8 @@ func NewServices(
 		BillService:    NewBillService(repositories.BillRepo),
 		ProfileService: NewProfileService(repositories.ProfileRepo),
 	}
+}
 
+func (s *Services) GetServices() *Services {
+	return s
 }
